@@ -1,0 +1,331 @@
+@import '_normalize.sass'
+//@import '_typography.sass'
+@import '_animations.sass'
+//@import url("https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans")
+
+\:root 
+  --main-background: hsla(72, 49%, 69%, 0.5)
+  --nav-mobile: hsla(72, 49%, 69%)
+  --bg-primario: black
+  --verde: #82a7a6
+  --verdeoscuro: #455655
+  --azul: #9ed0e6
+  --rosa: #b796ac
+  --naranja: #EBAA48
+  --main-color: black
+  --typo-headlines: "Space Mono", monospace
+  --typo-paragraph: "Work Sans", sans-serif
+* 
+  box-sizing: border-box
+
+html 
+  color: var(--main-color)
+  background-color: var(--main-background)
+  
+body 
+    margin: 0
+    background-color: var(--bg-primario)
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+  font-family: var(--typo-headlines)
+
+
+p,
+a,
+label,
+input,
+figcaption,
+ul,
+ol 
+  font-family: var(--typo-paragraph)
+  line-height: 1.3em
+ul,
+ol
+    padding-left: 0
+
+figcaption 
+  font-style: italic
+img
+    width: 100%
+
+.small, .medium, .large
+    font-family: var(--typo-headlines)
+.small
+    font-size: 0.7rem
+.medium
+    font-size: 1rem
+
+.large
+    font-size: 1.2rem
+            
+nav
+    display: none
+.nav-mobile
+    margin: 0 auto
+    text-align: center
+    ul
+        display: flex
+        flex-wrap: wrap
+        position: fixed
+        bottom: 0
+        z-index: 100
+        list-style-type: none
+        background-color: var(--nav-mobile)
+        margin-bottom: 0
+        li
+            width: 50%
+            padding: 0.6em 0
+            a
+                text-decoration: none
+                color: white
+                
+
+.hero-text-container
+    position: absolute
+    width: 90%
+    bottom: 2rem
+    margin: 0 auto
+    animation: fade-in 1s ease-in-out
+    &.left
+        left: 0
+        right: 0
+    &.right
+        left: 0
+        right: 0
+.dark-box
+    height: 20.375rem
+    background: rgba(0, 0, 0, 0.7)
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    color: white
+    padding: 1rem 3rem
+    margin: 0 auto
+section
+    margin-bottom: 0.625rem    
+
+
+footer
+    text-align: center
+    background-color: black
+    color: white
+    padding: 2.75rem 0
+    margin-bottom: 2.2em
+    a
+        text-decoration: none
+        font-weight: 600
+        color: white
+        opacity: 0.7
+        transition: all 0.2s ease-in
+        &:hover
+            opacity: 1
+
+    ul 
+        list-style-type: none
+        padding-left: 0
+        li
+            padding: 0.6rem
+        
+
+#logo
+    max-width: 200px
+    width: 100%
+#logo-nav
+    max-width: 80px
+    width: 100%
+#carrusel
+    margin: 0 auto
+    text-align: center
+   
+    margin-bottom: 20px;
+
+.white-container
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    grid-gap: 10px
+    margin: 0 auto
+    justify-content: center
+    padding: 1rem
+    align-items: center
+    background: #FFFFFF
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    max-width: 800px
+    grid-gap: 40px
+    margin-bottom: 30px
+    img
+        width: 100%
+        margin: 0 auto
+    ol
+        padding-left: 1em
+input[type="text"]
+    width: 95%
+    height: 3.375rem
+    border: 1px solid black
+    border-radius: 4px
+    margin-bottom: 10px
+    zoom: 1.5
+    &::placeholder
+        padding-left: 10px
+.privacy
+    display: flex
+    align-items: center
+    input[type="checkbox"]
+        margin: 10px
+
+//***************UI
+.carrusel-container 
+    position: relative
+    max-width: 1000px
+    margin: 0 auto
+
+
+.carrusel 
+    display: flex
+    justify-content: left
+    align-items: center
+    overflow: auto
+    
+
+
+#ui-arrow-left 
+    position: absolute
+    max-width: 50px
+    bottom: 40%
+    left: 0
+    cursor: pointer
+    width: 50px
+    z-index: 10
+
+
+#ui-arrow-right 
+    position: absolute
+    max-width: 50px
+    bottom: 40%
+    right: 0
+    cursor: pointer
+    width: 50px
+    z-index: 10
+
+.carrusel-img
+    object-fit: cover
+    object-position: top left
+    height: 500px
+
+
+
+.button
+    background-color: var(--verde)
+    color: white
+    padding: 1rem 3rem
+    font-size: 1.5rem
+    text-align: center
+    border-radius: 4px
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    text-decoration: none
+    display: block
+    margin-top: 10px
+    transition: all 0.5s 
+    &:hover
+        background-color: var(--verdeoscuro)
+    &:active
+        transform: translateY(2px)
+        box-shadow: 0 2px 3px rgba(0,0,0,0.15)
+
+
+
+//***************FIN UI
+
+//***************ANIMACIONES
+@keyframes fade-in 
+    0% 
+        opacity: 0
+    100% 
+        opacity: 1
+  
+
+
+@keyframes fade-slide-in 
+    0% 
+        background-color: white
+        opacity: 0
+        margin-top: 40px
+    100% 
+        opacity: 1
+        margin-top: 0
+  
+
+//***************FIN ANIMACIONES
+//***************MEDIA QUERY
+@media screen and (min-width: 425px)
+    nav
+        text-align: center
+        display: block
+        
+    ul
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        list-style-type: none
+        li 
+            text-decoration: none
+            padding: 1em 1.1em
+            color: var(--azul)
+            font-weight: 600
+            transition: all 0.3s ease-in
+            &:hover
+                background-color: var(--azul) 
+                &:nth-child(3)
+                    background-color: transparent
+            a
+                text-decoration: none
+                padding: 1em 2em
+                color: var(--azul)
+                font-weight: 600
+                transition: all 0.3s ease-in
+                font-size: 0.69rem
+                &:hover
+                    color: white 
+    .nav-mobile
+        display: none
+    .carrusel
+        height: 800px    
+    .carrusel-img 
+        width: 100%
+        justify-content: center
+        align-items: center
+        animation: fade-in 1s ease-in-out
+    .dark-box
+        height: 16.375rem
+        background: rgba(0, 0, 0, 0.7)
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        color: white
+        padding: 2.1875rem 1.75rem 0 2.375rem
+
+    .white-container
+        padding: 7rem
+        max-width: 800px
+        img
+            max-width: 280px
+    
+    
+    
+        
+    footer
+        margin-bottom: 0
+    
+@media screen and (min-width: 801px)
+    ul li a
+        font-size: 1rem
+    .hero-text-container
+        max-width: 500px
+        &.left
+            left: 0
+            right: 19.938rem
+        &.right
+            left: 19.938rem
+            right: 0
+//***************FIN MEDIA QUERY
